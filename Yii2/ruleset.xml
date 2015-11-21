@@ -16,6 +16,8 @@
 
 		<!-- CASE keyword must be indented 4 spaces from SWITCH keyword. -->
 		<exclude name="PSR2.ControlStructures.SwitchDeclaration"/>
+
+		<exclude name="Squiz.WhiteSpace.ScopeClosingBrace.ContentBefore"/>
 	</rule>
 
 	<!-- Property declaration rules. -->
