@@ -1,4 +1,11 @@
 <?php
+
+namespace PHP_CodeSniffer\Standards\Yii2\Sniffs\Files;
+
+use PHP_CodeSniffer\Files\File;
+use PHP_CodeSniffer\Sniffs\Sniff;
+use PHP_CodeSniffer\Util\Tokens;
+
 /**
  * Squiz_Sniffs_Whitespace_ScopeClosingBraceSniff.
  *
@@ -27,7 +34,8 @@
  * @version   Release: 2.3.4
  * @link      http://pear.php.net/package/PHP_CodeSniffer
  */
-class Yii2_Sniffs_PHP_ScopeClosingBraceSniff implements PHP_CodeSniffer_Sniff
+
+class Yii2_Sniffs_PHP_ScopeClosingBraceSniff implements Sniff
 {
 
 
@@ -38,7 +46,7 @@ class Yii2_Sniffs_PHP_ScopeClosingBraceSniff implements PHP_CodeSniffer_Sniff
      */
     public function register()
     {
-        return PHP_CodeSniffer_Tokens::$scopeOpeners;
+        return Tokens::$scopeOpeners;
 
     }//end register()
 
@@ -52,7 +60,7 @@ class Yii2_Sniffs_PHP_ScopeClosingBraceSniff implements PHP_CodeSniffer_Sniff
      *
      * @return void
      */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    public function process(File $phpcsFile, $stackPtr)
     {
         $tokens = $phpcsFile->getTokens();
 

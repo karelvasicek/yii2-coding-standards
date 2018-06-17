@@ -1,5 +1,10 @@
 <?php
 
+namespace PHP_CodeSniffer\Standards\Yii2\Sniffs\PHP;
+
+use PHP_CodeSniffer\Files\File;
+use PHP_CodeSniffer\Sniffs\Sniff;
+
 /**
  * This sniff prohibits the use of the old array() syntax.
  */
@@ -27,7 +32,7 @@
  *
  */
 
-class Yii2_Sniffs_PHP_DisallowLongArraySyntaxSniff implements PHP_CodeSniffer_Sniff
+class Yii2_Sniffs_PHP_DisallowLongArraySyntaxSniff implements Sniff
 {
     /**
      * Returns the token types that this sniff is interested in.
@@ -48,7 +53,7 @@ class Yii2_Sniffs_PHP_DisallowLongArraySyntaxSniff implements PHP_CodeSniffer_Sn
      *
      * @return void
      */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    public function process(File $phpcsFile, $stackPtr)
     {
         $tokens = $phpcsFile->getTokens();
         if ($tokens[$stackPtr]['content'] === 'array') {

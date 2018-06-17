@@ -1,6 +1,11 @@
 <?php
 
-class Yii2_Sniffs_Properties_PrivatePropertiesUnderscoreSniff implements PHP_CodeSniffer_Sniff
+namespace PHP_CodeSniffer\Standards\Yii2\Sniffs\Properties;
+
+use PHP_CodeSniffer\Files\File;
+use PHP_CodeSniffer\Sniffs\Sniff;
+
+class Yii2_Sniffs_Properties_PrivatePropertiesUnderscoreSniff implements Sniff
 {
 	public function register()
 	{
@@ -9,7 +14,7 @@ class Yii2_Sniffs_Properties_PrivatePropertiesUnderscoreSniff implements PHP_Cod
 		);
 	}
 
-	public function process(PHP_CodeSniffer_File $file, $pointer)
+	public function process(File $file, $pointer)
 	{
 		$tokens = $file->getTokens();
 		if ($tokens[$pointer]['content'] === 'private' &&
